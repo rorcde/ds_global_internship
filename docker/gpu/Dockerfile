@@ -245,11 +245,13 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         enum34 \
         pyyaml \
         typing \
-    	torchvision_nightly \
-        && \
+    	&& \
     $PIP_INSTALL \
         torch_nightly -f \
         https://download.pytorch.org/whl/nightly/cu100/torch_nightly.html \
+        && \
+    $PIP_INSTALL \
+        git+https://github.com/pytorch/vision.git \
         && \
 
 # ==================================================================
