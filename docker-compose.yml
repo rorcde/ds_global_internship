@@ -1,0 +1,15 @@
+version: '2.3'
+services:
+   notebook-gpu-server:
+      image: notebook_gpu_image:riverar-ds_global_internship
+      container_name: gpu_container-riverar-ds_global_internship
+      build: docker/gpu
+      runtime: nvidia
+      ports:
+         - "0.0.0.0:8890:8888"
+      volumes:
+         - ./:/root
+      ipc: host
+      command: jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/root'
+      stdin_open: true
+      tty: true
