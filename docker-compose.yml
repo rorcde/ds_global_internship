@@ -6,10 +6,10 @@ services:
       build: docker/gpu
       runtime: nvidia
       ports:
-         - "0.0.0.0:8890:8888"
+         - "0.0.0.0:8891:8888"
       volumes:
          - ./:/root
       ipc: host
-      command: jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/root'
+      command: jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token='1234Gl0b4l' --notebook-dir='/root'
       stdin_open: true
       tty: true
