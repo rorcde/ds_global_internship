@@ -6,7 +6,7 @@ services:
       build: docker/gpu
       runtime: nvidia
       ports:
-         - "0.0.0.0:8891:8888"
+         - "0.0.0.0:8081:8888"
       volumes:
          - ./:/root
       ipc: host
